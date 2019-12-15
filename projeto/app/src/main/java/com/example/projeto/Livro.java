@@ -20,6 +20,17 @@ public class Livro {
     private int quantidade;
 
     @Ignore
+    private boolean checked = false;
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+    @Ignore
     public Livro(){}
 
     public Livro(String titulo, String autor, String ano, int edicao, int quantidade){
