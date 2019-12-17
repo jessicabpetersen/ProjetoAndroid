@@ -27,11 +27,10 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
-            android:hint="e-mail"
+            android:hint="E-mail"
             android:inputType="textEmailAddress"
             android:layout_below="@+id/imageViewBook"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-condensed"/>
+            android:layout_centerHorizontal="true"/>
 
         <EditText android:textSize="13dp"
             android:id="@+id/pass"
@@ -42,8 +41,7 @@
             android:hint="Password"
             android:layout_below="@+id/user"
             android:layout_centerHorizontal="true"
-            android:inputType="textPassword"
-            android:fontFamily="sans-serif-condensed"/>
+            android:inputType="textPassword"/>
 
         <Button android:id="@+id/login"
             android:background="@drawable/button5"
@@ -59,7 +57,7 @@
             android:layout_width="180dp"
             android:layout_height="23dp"
             android:layout_marginTop="15dp"
-            android:text="Signup"
+            android:text="Registro"
             android:layout_below="@+id/login"
             android:layout_centerHorizontal="true"/>
 
