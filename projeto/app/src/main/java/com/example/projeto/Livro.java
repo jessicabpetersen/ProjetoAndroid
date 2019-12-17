@@ -16,8 +16,12 @@ public class Livro {
     private String ano;
     @ColumnInfo(name = "edicao")
     private int edicao;
-    @ColumnInfo(name = "quantidade")
-    private int quantidade;
+    @ColumnInfo(name = "quantidadeTotal")
+    private int quantidadeTotal;
+    @ColumnInfo(name = "quantidadeDisponivel")
+    private int quantidadeDisponivel;
+    @ColumnInfo(name = "localizacao")
+    private String localizacao;
 
     @Ignore
     private boolean checked = false;
@@ -33,12 +37,14 @@ public class Livro {
     @Ignore
     public Livro(){}
 
-    public Livro(String titulo, String autor, String ano, int edicao, int quantidade){
+    public Livro(String titulo, String autor, String ano, int edicao, int quantidadeDisponivel, int quantidadeTotal, String localizacao){
         this.titulo = titulo;
         this.ano = ano;
         this.autor = autor;
         this.edicao = edicao;
-        this.quantidade = quantidade;
+        this.quantidadeDisponivel = quantidadeDisponivel;
+        this.quantidadeTotal = quantidadeTotal;
+        this.localizacao = localizacao;
     }
 
     public int getId() {
@@ -81,11 +87,27 @@ public class Livro {
         this.edicao = edicao;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantidadeTotal() {
+        return quantidadeTotal;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantidadeTotal(int quantidadeTotal) {
+        this.quantidadeTotal = quantidadeTotal;
+    }
+
+    public int getQuantidadeDisponivel() {
+        return quantidadeDisponivel;
+    }
+
+    public void setQuantidadeDisponivel(int quantidadeDisponivel) {
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 }

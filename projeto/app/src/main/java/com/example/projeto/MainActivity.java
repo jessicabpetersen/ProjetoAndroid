@@ -53,9 +53,7 @@ public class MainActivity extends AppCompatActivity implements LivroEventListene
         theme = settings.getInt(THEME_Key, R.style.AppTheme);
         setTheme(theme);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
@@ -124,15 +122,15 @@ public class MainActivity extends AppCompatActivity implements LivroEventListene
                 .build();
 
         // Navigation drawer
-        new DrawerBuilder()
-                .withActivity(this) // activity main
-                .withSavedInstance(savedInstanceState) // saveInstance of activity
-                .withDrawerItems(iDrawerItems) // menu items
-                .withTranslucentNavigationBar(true)
-                .withStickyDrawerItems(stockyItems) // footer items
-                .withAccountHeader(header) // header of navigation
-                .withOnDrawerItemClickListener((Drawer.OnDrawerItemClickListener) this) // listener for menu items click
-                .build();
+//        new DrawerBuilder()
+//                .withActivity(this) // activity main
+//                .withSavedInstance(savedInstanceState) // saveInstance of activity
+//                .withDrawerItems(iDrawerItems) // menu items
+//                .withTranslucentNavigationBar(true)
+//                .withStickyDrawerItems(stockyItems) // footer items
+//                .withAccountHeader(header) // header of navigation
+//                .withOnDrawerItemClickListener((Drawer.OnDrawerItemClickListener) this) // listener for menu items click
+//                .build();
 
 
     }
