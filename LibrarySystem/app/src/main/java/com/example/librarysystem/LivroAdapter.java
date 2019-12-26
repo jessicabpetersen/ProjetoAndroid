@@ -41,7 +41,7 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroHolder>
         final Livro livro = getLivro(position);
         if(livro != null){
             holder.titulo.setText(livro.getTitulo());
-            holder.imagem.setImageIcon(livro.getImagem());
+//            holder.imagem.setImageIcon(livro.getImagem());
             holder.autor.setText(livro.getAutor());
             holder.ano.setText(livro.getAno());
         }
@@ -55,13 +55,13 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroHolder>
 
     class LivroHolder extends RecyclerView.ViewHolder{
         TextView titulo, autor, ano;
-        ImageView imagem;
+//        ImageView imagem;
         public LivroHolder(View itemView){
             super(itemView);
             titulo = itemView.findViewById(R.id.titulo_book_list);
             autor = itemView.findViewById(R.id.autor_book_list);
             ano = itemView.findViewById(R.id.ano_book_list);
-            imagem = itemView.findViewById(R.id.imagem_book_list);
+//            imagem = itemView.findViewById(R.id.imagem_book_list);
         }
     }
 }

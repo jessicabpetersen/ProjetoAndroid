@@ -1,18 +1,22 @@
 package com.example.librarysystem;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Icon;
+import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "livros")
+@Entity(tableName = "livros", primaryKeys = {"titulo", "autor"})
 public class Livro {
 
-    @PrimaryKey(autoGenerate =  false)
+
+    @NonNull
     private String titulo;
-    @PrimaryKey(autoGenerate = false)
+    @NonNull
     private String autor;
 
     @ColumnInfo(name = "editora")
@@ -30,8 +34,10 @@ public class Livro {
     @ColumnInfo(name = "quantidadeDisponivel")
     private int quantidadeDisponivel;
 
-    @ColumnInfo(name = "imagem")
-    private Icon imagem;
+//   @ColumnInfo(name = "imagem")
+ //   private Icon imagem;
+
+
 
     @Ignore
     private boolean checked = false;
@@ -44,13 +50,6 @@ public class Livro {
         this.checked = checked;
     }
 
-    public Icon getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(Icon imagem) {
-        this.imagem = imagem;
-    }
 
     public String getTitulo() {
         return titulo;

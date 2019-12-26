@@ -9,6 +9,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Dao
 public interface LivroDao {
@@ -23,6 +24,6 @@ public interface LivroDao {
     void updateLivro(Livro livro);
 
     @Query("SELECT * FROM livros")
-    ArrayList<Livro> getLivros();
+    List<Livro> getLivros();
 
 }
