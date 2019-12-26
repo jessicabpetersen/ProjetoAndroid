@@ -60,10 +60,5 @@
             android:text="Registro"
             android:layout_below="@+id/login"
             android:layout_centerHorizontal="true"/>
-
-
-
     </RelativeLayout>
-
-
 </RelativeLayout>

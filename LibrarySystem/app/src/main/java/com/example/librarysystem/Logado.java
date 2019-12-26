@@ -10,12 +10,14 @@ import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Logado extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private ArrayList<Livro> listaLivros;
+    private List<Livro> listaLivros;
     private LivroAdapter adapter;
     private FloatingActionButton floatingActionButton;
+    private LivroDao dao;
 
 
     @Override
@@ -45,6 +47,12 @@ public class Logado extends AppCompatActivity {
     }
 
     private void onLoadBooks(){
+        this.listaLivros = new ArrayList<>();
+        List<Livro> list = dao.getLivros();
+        this.listaLivros.addAll(list);
+        this.adapter = new LivroAdapter(this, this.listaLivros);
+
+        this.recyclerView.setAdapter(adapter);
 
     }
 }

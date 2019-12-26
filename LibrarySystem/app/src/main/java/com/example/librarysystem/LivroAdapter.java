@@ -13,12 +13,13 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.LivroHolder> {
     private Context context;
-    private ArrayList<Livro> livros;
+    private List<Livro> livros;
 
-    public LivroAdapter(Context context, ArrayList<Livro> livros){
+    public LivroAdapter(Context context, List<Livro> livros){
         this.context = context;
         this.livros = livros;
     }

@@ -2,11 +2,47 @@ package com.example.librarysystem;
 
 import android.graphics.drawable.Icon;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "livros")
 public class Livro {
 
-    private String titulo, autor, editora, ano, localizacao;
-    private int quantidadeTotal, quantidadeDisponivel;
+    @PrimaryKey(autoGenerate =  false)
+    private String titulo;
+    @PrimaryKey(autoGenerate = false)
+    private String autor;
+
+    @ColumnInfo(name = "editora")
+    private String editora;
+
+    @ColumnInfo(name = "ano")
+    private String ano;
+
+    @ColumnInfo(name = "localizacao")
+    private String localizacao;
+
+    @ColumnInfo(name = "quantidadeTotal")
+    private int quantidadeTotal;
+
+    @ColumnInfo(name = "quantidadeDisponivel")
+    private int quantidadeDisponivel;
+
+    @ColumnInfo(name = "imagem")
     private Icon imagem;
+
+    @Ignore
+    private boolean checked = false;
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
 
     public Icon getImagem() {
         return imagem;
