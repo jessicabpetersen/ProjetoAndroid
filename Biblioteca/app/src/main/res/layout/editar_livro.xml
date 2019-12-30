@@ -1,0 +1,276 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/fundo"
+android:layout_centerHorizontal="true"
+tools:context=".EditarLivro">
+
+<TextView
+    android:id="@+id/textView_editar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="40dp"
+    android:layout_marginEnd="38dp"
+    android:fontFamily="@font/oswald"
+    android:text="@string/editar"
+    android:textColor="#FFFFFF"
+    android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/titulo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_editar"
+        android:layout_marginTop="50dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/textView_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald"
+        android:text="@string/titulo"
+        android:textColor="#FFFFFF"
+        android:paddingRight="10dp"
+        android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_titulo"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Título"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/autor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="@string/autor"
+            android:textColor="#FFFFFF"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_autor"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Autor"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editora"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/autor"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_editora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:paddingRight="10dp"
+            android:text="@string/editora"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_editora"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Editora"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ano"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editora"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_ano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="@string/ano"
+            android:textColor="#FFFFFF"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_ano"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Ano"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imagem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ano"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_imagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="@string/imagem"
+            android:textColor="#FFFFFF"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imagemView_editar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/editView_imagem"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:hint="Imagem"
+            android:inputType="text"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/bt_imagem"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="-15dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ad_imagem" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quantidadet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagem"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_quantidadet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="@string/quantidadet"
+            android:textColor="#FFFFFF"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_quantidadet"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Quantidade total"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/quantidaded"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantidadet"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_quantidaded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="@string/quantidaded"
+            android:textColor="#FFFFFF"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_quantidaded"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Quantidade disponível"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/localizacao"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantidaded"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/textView_localizacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="@string/localizacao"
+            android:textColor="#FFFFFF"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editView_localizacao"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:background="@drawable/textfield"
+            android:layout_marginRight="80dp"
+            android:hint="Localização"
+            android:inputType="text"
+            android:textSize="16dp" />
+    </LinearLayout>
+<Button
+    android:id="@+id/guardar"
+    android:layout_width="120dp"
+    android:layout_height="30dp"
+    android:layout_below="@+id/localizacao"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="15dp"
+    android:gravity="center"
+    android:background="@drawable/button"
+    android:drawableStart="@drawable/guardar"
+    android:text="Guardar" />
+
+</RelativeLayout>

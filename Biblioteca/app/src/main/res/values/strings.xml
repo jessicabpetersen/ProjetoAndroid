@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Biblioteca</string>
+    <string name="biblioteca">BIBLIOTECA</string>
+    <string name="registro">Registro</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="editar">Editar</string>
+    <string name="remover">Remover</string>
+    <string name="pesquisa">Pesquisa</string>
+
+    <string name="titulo">Título:</string>
+    <string name="autor">Autor:</string>
+    <string name="editora">Editora:</string>
+    <string name="ano">Ano:</string>
+    <string name="quantidadet">Qtd total:</string>
+    <string name="quantidaded">Qtd disponível:</string>
+    <string name="localizacao">Localização:</string>
+    <string name="imagem">Imagem:</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

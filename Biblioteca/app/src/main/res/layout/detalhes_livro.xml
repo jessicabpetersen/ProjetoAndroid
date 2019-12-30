@@ -1,0 +1,217 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo"
+    android:layout_centerHorizontal="true"
+    tools:context=".DetalhesLivro">
+
+    <TextView
+        android:id="@+id/textView_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="38dp"
+        android:fontFamily="@font/oswald"
+        android:text="Título"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/img_livro"
+        android:layout_below="@+id/textView_titulo"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="left"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:src="@drawable/origem" />
+
+    <LinearLayout
+        android:id="@+id/autor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_titulo"
+        android:layout_marginTop="50dp"
+        android:gravity="right"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/textView_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Autor"
+            android:textColor="#FFFFFF"
+            android:paddingRight="60dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_nome_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Nome Autor"
+            android:textColor="#FFFFFF"
+            android:paddingRight="60dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editora"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/autor"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/textView_editora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Editora"
+            android:textColor="#FFFFFF"
+            android:paddingRight="60dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_nome_editora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Nome Editora"
+            android:textColor="#FFFFFF"
+            android:paddingRight="60dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ano"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editora"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/textView_ano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Editora"
+            android:textColor="#FFFFFF"
+            android:paddingRight="60dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView_nome_ano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Nome Editora"
+            android:textColor="#FFFFFF"
+            android:paddingRight="60dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/quantidade"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ano"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                 android:id="@+id/textView_qt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald"
+                android:text="Quantidade Total"
+                android:textColor="#FFFFFF"
+                android:paddingLeft="60dp"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald"
+                android:textColor="#FFFFFF"
+                android:paddingLeft="60dp"
+                android:textSize="18sp"
+                android:id="@+id/detalhe_quantidade_total"/>
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView_qd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Quantidade Disponível"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="60dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/detalhe_quantidade_disponivel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="60dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:text="Localização"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="60dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/detalhe_localizacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oswald"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="60dp"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantidade"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    <Button
+        android:id="@+id/detalhe_editar"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button"
+        android:layout_marginRight="35dp"
+        android:drawableStart="@drawable/ic_edit_black_20dp"
+        android:text="Editar" />
+
+        <Button
+            android:id="@+id/eliminar"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button"
+            android:drawableStart="@drawable/ic_delete_black_20dp"
+            android:text="Eliminar" />
+    </LinearLayout>
+</RelativeLayout>
