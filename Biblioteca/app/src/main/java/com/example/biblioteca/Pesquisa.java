@@ -42,46 +42,42 @@ public class Pesquisa extends AppCompatActivity {
         pesquisar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Livro livro = null;
+                Livro livro =  new Livro();
                 try {
                     Cursor cursor = dao.getBook("Select * From "+Database.TABLE_ADICIONAR+ " WHERE "+
                             Database.COL_TITULO+" = '"+editView_p.getText().toString()+"' or "+
-                            Database.COL_AUTOR+" = '"+editView_p.getText().toString()+"';");
+                            Database.COL_AUTOR+" = '"+editView_p.getText().toString()+"'");
                     if (cursor.getCount() > 0) {
                         cursor.moveToFirst();
-                        do {
-                            livro = new Livro();
-                            livro.setId(cursor.getInt(0));
-                            livro.setTitulo(cursor.getString(1));
-                            livro.setAutor(cursor.getString(2));
-                            livro.setEditora(cursor.getString(3));
-                            livro.setAno(cursor.getString(4));
-                            livro.setImagem(cursor.getBlob(5));
-                            livro.setQuantidadeTotal(cursor.getInt(6));
-                            livro.setQuantidadeDisponivel(cursor.getInt(7));
-                            livro.setLocalizacao(cursor.getString(8));
-                        } while (cursor.moveToNext());
+                        livro.setId(cursor.getInt(0));
+                        livro.setTitulo(cursor.getString(1));
+                        livro.setAutor(cursor.getString(2));
+                        livro.setEditora(cursor.getString(3));
+                        livro.setAno(cursor.getString(4));
+                        livro.setImagem(cursor.getBlob(5));
+                        livro.setQuantidadeTotal(cursor.getInt(6));
+                        livro.setQuantidadeDisponivel(cursor.getInt(7));
+                        livro.setLocalizacao(cursor.getString(8));
+                        openDetalhe(livro);
+                    }else{
+                        editView_p.setText("");
+                        notificacao.setText("Livro não encontrado");
+
                     }
                 }catch (NullPointerException e){
                     e.printStackTrace();
                 }
-                openDetalhe(livro);
             }
         });
     }
 
     public void openDetalhe(Livro livro){
-        if(livro.getTitulo() != null) {
             Intent detalheLivro = new Intent(this, DetalhesLivro.class);
             detalheLivro.putExtra("titulo", livro.getTitulo().toString());
             detalheLivro.putExtra("autor", livro.getAutor().toString());
             detalheLivro.putExtra("ano", livro.getAno().toString());
             detalheLivro.putExtra("editora", livro.getEditora().toString());
             startActivity(detalheLivro);
-        }else{
-            editView_p.setText("");
-            notificacao.setText("Livro não encontrado");
-        }
     }
 
     @Override
