@@ -45,6 +45,7 @@ public class EditarLivro extends AppCompatActivity {
     private EditText adTitulo,adAutor,adEditora,adAno,adImagem, adQtotal,adQdisponivel,adLocalizacao;
     private ImageView imageView;
     private Database dao;
+    private String tituloAntigo, autorAntigo;
 
     public EditarLivro() {
         // Required empty public constructor
@@ -112,7 +113,8 @@ public class EditarLivro extends AppCompatActivity {
                 adAutor.setText(livro.getAutor());
                 adQdisponivel.setText(String.valueOf(livro.getQuantidadeDisponivel()));
                 adLocalizacao.setText(livro.getLocalizacao());
-
+                tituloAntigo = livro.getTitulo();
+                autorAntigo = livro.getAutor();
             }while (cursor.moveToNext());
         }
 
@@ -128,19 +130,15 @@ public class EditarLivro extends AppCompatActivity {
                 livro.setQuantidadeTotal(Integer.parseInt(adQtotal.getText().toString().trim()));
                 livro.setQuantidadeDisponivel(Integer.parseInt(adQdisponivel.getText().toString().trim()));
                 livro.setLocalizacao(adLocalizacao.getText().toString().trim());
-                livro.setImagem(imageViewToByte());
-
+                if (!faImagem.isEmpty())
+                    livro.setImagem(imageViewToByte());
                 if (livro.getTitulo().isEmpty() || livro.getAutor().isEmpty() ||livro.getEditora().isEmpty() ||
-                        livro.getAno().isEmpty() || faImagem.isEmpty() || livro.getQuantidadeTotal() <1||
+                        livro.getAno().isEmpty() ||  livro.getQuantidadeTotal() <1||
                         livro.getQuantidadeDisponivel()< 1 || livro.getLocalizacao().isEmpty()) {
                     Toast.makeText(EditarLivro.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 } else {
-                    db = openHelper.getWritableDatabase();
-
-//                    dao.onDeleteBook("Delete from "+ TABLE_ADICIONAR + " where "+COL_AUTOR +" = '"+livro.getAutor()+"' and "+ COL_TITULO+" = '"+ livro.getTitulo()+"'");
-
-                    insertData(livro.getTitulo(),livro.getAutor(),livro.getEditora(),livro.getAno(),livro.getImagem(),String.valueOf(livro.getQuantidadeTotal()),String.valueOf(livro.getQuantidadeDisponivel()),livro.getLocalizacao());
-                    //dao.onUpdateBook(livro);
+                    dao.onDeleteBook("Delete from "+ TABLE_ADICIONAR + " where "+COL_AUTOR +" = '"+autorAntigo+"' and "+ COL_TITULO+" = '"+ tituloAntigo+"'");
+                    dao.insertDataBase(livro);
                     Toast.makeText(EditarLivro.this, "Livro editado com sucesso", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(EditarLivro.this, ListaLivros.class));
                 }
@@ -159,22 +157,6 @@ public class EditarLivro extends AppCompatActivity {
         });
 
 
-    }
-
-    public void insertData(String fTitulo,String fAutor,String fEditora,String fAno,byte[] fImagem, String fQtotal,String fQdisponivel,String fLocalizacao){
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(Database.COL_TITULO,fTitulo);
-        contentValues.put(Database.COL_AUTOR,fAutor);
-        contentValues.put(Database.COL_EDITORA,fEditora);
-        contentValues.put(Database.COL_ANO,fAno);
-        contentValues.put(Database.COL_IMAGEM,fImagem);
-        contentValues.put(Database.COL_QT,fQtotal);
-        contentValues.put(Database.COL_QD,fQdisponivel);
-        contentValues.put(Database.COL_LOCALIZACAO,fLocalizacao);
-
-        String where = COL_AUTOR +" = ? and "+COL_TITULO+" = ?";
-        String[] args = {fAutor, fTitulo};
-        db.update(TABLE_ADICIONAR,contentValues,where,args);
     }
 
     private byte[] imageViewToByte() {
@@ -207,7 +189,7 @@ public class EditarLivro extends AppCompatActivity {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 imageView.setImageBitmap(bitmap);
-                adImagem.setText(uri.getPathSegments().get(5)+".png");
+                adImagem.setText(uri.getPathSegments().get(uri.getPathSegments().size()-1)+".png");
             }catch (FileNotFoundException e){
                 e.printStackTrace();
             }

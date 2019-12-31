@@ -164,7 +164,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 imageView.setImageBitmap(bitmap);
-                adImagem.setText(uri.getPathSegments().get(5)+".png");
+                adImagem.setText(uri.getPathSegments().get(uri.getPathSegments().size()-1)+".png");
             }catch (FileNotFoundException e){
                 e.printStackTrace();
             }

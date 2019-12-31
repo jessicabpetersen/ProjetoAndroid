@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.Menu;
+import android.widget.Toast;
+
 
 
 
@@ -61,7 +63,8 @@ public class Pesquisa extends AppCompatActivity {
                         openDetalhe(livro);
                     }else{
                         editView_p.setText("");
-                        notificacao.setText("Livro não encontrado");
+                       // notificacao.setText("Livro não encontrado");
+                        Toast.makeText(Pesquisa.this, "Livro não encontrado", Toast.LENGTH_SHORT).show();
 
                     }
                 }catch (NullPointerException e){
